@@ -14,7 +14,7 @@ function App() {
   const c = console.log.bind(document)
 
   return (
-    <div className="App">
+    <div>
       <Routes>
         <Route 
           path='/'
