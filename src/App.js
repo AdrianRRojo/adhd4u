@@ -7,7 +7,7 @@ import Planner from "./components/pages/Planner";
 import Tracker from "./components/pages/Tracker";
 import Resources from "./components/pages/Resources";
 import Home from "./components/pages/Home";
-
+import NavBar from "./components/NavBar";
 function App() {
 
   // Changes console.log to the variable "c"
@@ -15,6 +15,9 @@ function App() {
 
   return (
     <div>
+      <header>
+        <NavBar />
+      </header>
       <Routes>
         <Route 
           path='/'
