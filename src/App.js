@@ -7,6 +7,7 @@ import Planner from "./components/pages/Planner";
 import Tracker from "./components/pages/Tracker";
 import Resources from "./components/pages/Resources";
 import Home from "./components/pages/Home";
+import About from "./components/pages/About";
 import NavBar from "./components/NavBar";
 function App() {
 
@@ -22,7 +23,8 @@ function App() {
         <Route 
           path='/'
           element={
-            <Home />
+            // <Home />
+            <About />
           }
         />
         <Route 
