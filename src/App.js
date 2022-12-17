@@ -4,9 +4,9 @@ import {Routes, Route} from 'react-router-dom'
 
 import Forum from "./components/pages/Forum";
 import Planner from "./components/pages/Planner";
-import Tracker from "./components/pages/Tracker";
+import Timer from "./components/pages/Timer";
 import Resources from "./components/pages/Resources";
-import Home from "./components/pages/Home";
+// import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import NavBar from "./components/NavBar";
 function App() {
@@ -40,9 +40,9 @@ function App() {
           }
         />
         <Route 
-          path='/tracker'
+          path='/timer'
           element={
-            <Tracker />
+            <Timer />
           }
         />
         <Route 

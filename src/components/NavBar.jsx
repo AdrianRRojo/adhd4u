@@ -5,19 +5,19 @@ export default function NavBar() {
     <div className="bg-sky-400">
         <nav>
           <Link to='/'>
-            Home 
+            Our Mission 
           </Link>
           &nbsp;
           <Link to='/forum'>
-            Forum
+            Forums
           </Link>
           &nbsp;
           <Link to='/planner'>
             Planner
           </Link>
           &nbsp;
-          <Link to='/tracker'>
-            Calendar
+          <Link to='/timer'>
+            Timer
           </Link>
           &nbsp;
           <Link to='/resources'>
