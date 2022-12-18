@@ -59,39 +59,49 @@ import React, {useEffect, useState} from "react"
 
 
 export default function Timer(){
-    const [minute, setMinute] = useState(25)
-    const [seconds, setSeconds] = useState(0)
-    const [timerRunning, setTimerRunning] = useState(true)
-    const [playAlarm, setPlayAlarm] = useState(false)
+    // const [minute, setMinute] = useState(25)
+    // const [seconds, setSeconds] = useState(0)
+    // const [timerRunning, setTimerRunning] = useState(true)
+    // const [playAlarm, setPlayAlarm] = useState(false)
 
-    const runDownTheClock = () =>{
-        if(timerRunning){
-            const interval = setInterval(() => {
-                setSeconds(seconds => seconds - 1)
-            }, 60)
-                return() => clearInterval(interval)
-            }
-                if(seconds == 0){
-                    setSeconds += 59
-                    setMinute -=1
+    // const runDownTheClock = () =>{
+    //     if(timerRunning){
+    //         const interval = setInterval(() => {
+    //             setSeconds(seconds => seconds - 1)
+    //         }, 60)
+    //             return() => clearInterval(interval)
+    //         }
+    //             if(seconds == 0){
+    //                 setSeconds += 59
+    //                 setMinute -=1
 
-                }
-                if(minute == 0){
-                    setPlayAlarm(true)
-                    setTimerRunning(false)
-                }
-            }
-    const startTimer =()=>{
-        setMinute(24)
-        setSeconds(59)
-        runDownTheClock()
+    //             }
+    //             if(minute == 0){
+    //                 setPlayAlarm(true)
+    //                 setTimerRunning(false)
+    //             }
+    //         }
+    // const startTimer =()=>{
+    //     setMinute(24)
+    //     setSeconds(59)
+    //     runDownTheClock()
         
+    // }
+    class Alarm{
+        constructor(min, sec, running){
+            this.min = 25;
+            this.sec = 0;
+            this.running = false
+        }
     }
     return(
+        // <div>
+        //     <p>{minute}</p>
+        //     <p>{seconds}</p>
+        //     <button className="bg-red-400" onClick={startTimer}>Start Studying!</button>
+        // </div>
         <div>
-            <p>{minute}</p>
-            <p>{seconds}</p>
-            <button className="bg-red-400" onClick={startTimer}>Start Studying!</button>
+
         </div>
     )
     }
