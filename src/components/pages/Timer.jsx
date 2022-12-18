@@ -61,28 +61,37 @@ import React, {useEffect, useState} from "react"
 export default function Timer(){
     const [minute, setMinute] = useState(25)
     const [seconds, setSeconds] = useState(0)
-    const [alarmRunning, setAlarmRunning] = useState(false)
+    const [timerRunning, setTimerRunning] = useState(true)
+    const [playAlarm, setPlayAlarm] = useState(false)
 
-    useEffect = () => {
-        if(alarmRunning){
-            const runDownTheClock = () =>{
-                setSeconds = 60
-                
-                const interval = setInterval(() => {
-                    setSeconds(seconds => seconds - 1)
-                }, 60)
+    const runDownTheClock = () =>{
+        if(timerRunning){
+            const interval = setInterval(() => {
+                setSeconds(seconds => seconds - 1)
+            }, 60)
                 return() => clearInterval(interval)
+            }
+                if(seconds == 0){
+                    setSeconds += 59
+                    setMinute -=1
 
-                if(seconds = 0){
-                    setMinute -= 1
+                }
+                if(minute == 0){
+                    setPlayAlarm(true)
+                    setTimerRunning(false)
                 }
             }
-        }
-    
+    const startTimer =()=>{
+        setMinute(24)
+        setSeconds(59)
+        runDownTheClock()
+        
     }
     return(
         <div>
-            
+            <p>{minute}</p>
+            <p>{seconds}</p>
+            <button className="bg-red-400" onClick={startTimer}>Start Studying!</button>
         </div>
     )
-}
+    }
