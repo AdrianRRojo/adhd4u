@@ -16,9 +16,9 @@ function App() {
 
   return (
     <div>
-      <header>
+      {/* <header>
         <NavBar />
-      </header>
+      </header> */}
       <Routes>
         <Route 
           path='/'
