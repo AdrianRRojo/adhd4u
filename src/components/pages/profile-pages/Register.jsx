@@ -4,7 +4,7 @@ import jwt_decode from 'jwt_decode'
 import { Navigate, Link } from 'react-router-dom'
 
 
-export default function Register({}){
+export default function Register({currentUser, setCurrentUser}){
     const [username,setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -34,7 +34,7 @@ export default function Register({}){
 			const decoded = jwt_decode(token)
 
 			// set the user in App's state to be the decoded token
-			// setCurrentUser(decoded)
+			setCurrentUser(decoded)
 
         }catch(err){
             c(err)
@@ -42,5 +42,32 @@ export default function Register({}){
                 setMsg(err.response.data.msg)
             }
         }
+        
     }
+    if (currentUser) {
+		return <Navigate to={`/${currentUser.username}`} />
+	}
+
+    return(
+        <div>
+            <div>
+                <p>Create an account</p>
+                <p>{msg}</p>
+            </div>
+            <div>
+                <form onSubmit={handleSubmit}> 
+                <input 
+                    type='text'
+                    id='floatingInput'
+                    placeholder='Username...'
+                    onChange={e => setUsername(e.target.value)}
+                    name='username'
+                    value={username}
+                    required
+                />
+                </form>
+            </div>
+        </div>
+        
+    )
 }
