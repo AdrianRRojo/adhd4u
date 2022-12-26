@@ -65,6 +65,17 @@ export default function Register({currentUser, setCurrentUser}){
                     value={username}
                     required
                 />
+                <label htmlFor='floatingInput'>Username:</label>
+
+                <input 
+                    type='text'
+                    id='email'
+                    placeholder='Email...'
+                    onChange={e => setEmail(e.target.value)}
+                    value={email}
+                    required
+                />
+                <label htmlFor='email'>Email:</label>
                 </form>
             </div>
         </div>
