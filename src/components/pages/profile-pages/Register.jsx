@@ -76,6 +76,18 @@ export default function Register({currentUser, setCurrentUser}){
                     required
                 />
                 <label htmlFor='email'>Email:</label>
+
+                <input 
+                    type='text'
+                    id='password'
+                    placeholder='Create a password...'
+                    onChange={e => setPassword(e.target.value)}
+                    value={password}
+                    required
+                />
+                <label htmlFor='password'>Password:</label>
+
+                
                 </form>
             </div>
         </div>
