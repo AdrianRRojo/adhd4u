@@ -90,7 +90,14 @@ export default function Register({currentUser, setCurrentUser}){
                 <button type='submit'>
                     Register
                 </button>
+
                 </form>
+            </div>
+            <div>
+                <p>
+                    Already have an account?
+                    <Link to='/'>Login</Link>
+                </p>
             </div>
         </div>
         
