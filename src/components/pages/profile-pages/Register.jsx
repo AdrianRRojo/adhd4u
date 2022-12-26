@@ -87,7 +87,9 @@ export default function Register({currentUser, setCurrentUser}){
                 />
                 <label htmlFor='password'>Password:</label>
 
-                
+                <button type='submit'>
+                    Register
+                </button>
                 </form>
             </div>
         </div>
