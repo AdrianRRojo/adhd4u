@@ -1,6 +1,6 @@
 import {useState, useRef, useEffect} from 'react'
 import axios from 'axios'
-import jwt_decode from 'jwt_decode'
+import jwt_decode from 'jwt-decode'
 import { Navigate, Link } from 'react-router-dom'
 
 
@@ -25,7 +25,7 @@ export default function Register({currentUser, setCurrentUser}){
 				}
 			}
 
-            const response = await axios.post(`${process.env.REACT_APP_SERVER/ap1-1.0/users/Register}`, formData, options)
+            const response = await axios.post(`${process.env.REACT_APP_SERVER}/api-v1/users/register`, formData, options)
 
             const { token } = response.data
 			localStorage.setItem('jwt', token)

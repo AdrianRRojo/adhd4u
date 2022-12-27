@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {Routes, Route} from 'react-router-dom'
-
+import jwt_decode from 'jwt-decode'
 
 import Forum from "./components/pages/Forum";
 import Planner from "./components/pages/Planner";
@@ -61,6 +61,12 @@ const [currentUser, setCurrentUser] = useState(localStorage.getItem('jwt')? jwt_
           path='/resources'
           element={
             <Resources />
+          }
+        />
+        <Route 
+          path='/register'
+          element={
+            <Register />
           }
         />
       </Routes>
