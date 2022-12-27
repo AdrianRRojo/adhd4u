@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {Routes, Route} from 'react-router-dom'
 
 
@@ -9,11 +9,23 @@ import Resources from "./components/pages/Resources";
 // import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import NavBar from "./components/NavBar";
-function App() {
 
+import Register from "./components/pages/profile-pages/Register";
+function App() {
+const [currentUser, setCurrentUser] = useState(localStorage.getItem('jwt')? jwt_decode(localStorage.getItem('jwt')):null)
   // Changes console.log to the variable "c"
   const c = console.log.bind(document)
 
+  useEffect(() =>{
+    const token = localStorage.getItem('jwt')
+    if(token){
+      setCurrentUser(jwt_decode(token))
+    }else{
+      setCurrentUser(null)
+    }
+  },[])
+
+  
   return (
     <div>
       {/* <header>
