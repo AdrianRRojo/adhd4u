@@ -72,6 +72,7 @@ const [currentUser, setCurrentUser] = useState(localStorage.getItem('jwt')? jwt_
       </Routes>
     </div>
   );
+  
 }
 
 export default App;
