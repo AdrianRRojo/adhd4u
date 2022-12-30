@@ -28,9 +28,9 @@ const [currentUser, setCurrentUser] = useState(localStorage.getItem('jwt')? jwt_
   
   return (
     <div>
-      {/* <header>
+      <header>
         <NavBar />
-      </header> */}
+      </header>
       <Routes>
         <Route 
           path='/'
